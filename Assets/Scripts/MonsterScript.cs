@@ -9,7 +9,7 @@ public class MonsterScript : MonoBehaviour
     void Start()
     {
 
-        GameObject castle = GameObject.Find("Tower_b");
+        GameObject castle = GameObject.Find("Door_a");
         if (castle)
             GetComponent<NavMeshAgent>().destination = castle.transform.position;
     }
@@ -17,9 +17,9 @@ public class MonsterScript : MonoBehaviour
     void OnTriggerEnter(Collider co)
     {
         // If castle then deal Damage, destroy self
-        if (co.name == "Castle")
+        if (co.name == "Door_a")
         {
-            co.GetComponentInChildren<HealthBar>().decrease();
+           // co.GetComponentInChildren<HealthBar>().decrease();
             Destroy(gameObject);
         }
     }

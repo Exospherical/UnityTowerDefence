@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
+
+
     // The TextMesh Component
     TextMesh tm;
 
