@@ -4,12 +4,40 @@ using UnityEngine;
 
 public class BuildableArea : MonoBehaviour
 {
-    //The tower object that is being built
+
+    public Color hovercolor;
+
+    private Renderer rend;
+    private Color startColor;
     public GameObject towerPreFab;
 
-    private void OnMouseUpAsButton()
+
+    private void Start()
     {
-        GameObject gameObject = (GameObject)Instantiate(towerPreFab);
-        gameObject.transform.position = transform.position + Vector3.up;
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
+    }
+
+    //The tower object that is being built
+
+    private void OnMouseEnter()
+    {
+        GetComponent<Renderer>().material.color = hovercolor;
+    }
+
+    private void OnMouseDown()
+    {
+        if (towerPreFab != null)
+        {
+            return;
+        }
+
+        GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
+        towerPreFab= (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+    }
+
+    private void OnMouseExit()
+    {
+        rend.material.color = startColor;
     }
 }
