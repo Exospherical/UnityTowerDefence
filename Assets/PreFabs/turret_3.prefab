@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 5
+  range: 20
   turnSpeed: 10
   bulletPrefab: {fileID: 7713081898882887214, guid: 7df5057070e44ac4abe5431effb1cc03,
     type: 3}
