@@ -5,17 +5,19 @@ using UnityEngine;
 public class TurretShoot : MonoBehaviour
 {
 
-    private float shootTimer = 0.5f;
-    private float shootTimerMax = 0.5f;
+    private float fireRate = 1f;
+    private float fireCountdown = 0f;
 
     public Transform target;
-    public float range = 15f;
+    public float range = 5f;
     public float turnSpeed = 10f;
 
     // Update is called once per frame
 
     public GameObject bulletPrefab;
     public Transform parttoRotate;
+
+    public Transform firePoint;
 
     public string enemyTag = "Enemy";
 
@@ -36,28 +38,24 @@ public class TurretShoot : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(parttoRotate.rotation, lookrotation, Time.deltaTime * turnSpeed) .eulerAngles;
         parttoRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-        shootTimer -= Time.deltaTime;
+        if (fireCountdown <= 0f)
+        {
+            shoot();
+            fireCountdown = 1f / fireRate;
+        }
+        fireCountdown -= Time.deltaTime;
     }
 
 
-    // void OnTriggerEnter(Collider co)
-    void OnTriggerStay(Collider co)
 
+    void shoot()
     {
-        if (shootTimer <= 0f)
+       GameObject bulletGO =  (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        if (bullet != null)
         {
-            shootTimer = shootTimerMax;
-
-            // Was it a Monster? Then Shoot it
-            if (co.GetComponent<MonsterScript>())
-            {
-            //    GameObject g = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-             //   g.GetComponent<Bullet>().target = co.transform;
-            }
+            bullet.chase(target);
         }
-
-
-
     }
 
     private void OnDrawGizmosSelected()
