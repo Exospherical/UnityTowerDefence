@@ -10,23 +10,33 @@ public class BuildableArea : MonoBehaviour
     private Renderer rend;
     private Color startColor;
     public GameObject towerPreFab;
+    BuildManager buildManager;
 
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        buildManager = BuildManager.instance;
     }
 
     //The tower object that is being built
 
     private void OnMouseEnter()
     {
+        if (buildManager.getTurretToBuild() == null)
+        {
+            return;
+        }
         GetComponent<Renderer>().material.color = hovercolor;
     }
 
     private void OnMouseDown()
     {
+        if(buildManager.getTurretToBuild() == null)
+        {
+            return;
+        }
         if (towerPreFab != null)
         {
             return;
