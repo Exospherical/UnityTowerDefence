@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class BuildableArea : MonoBehaviour
 {
-
+    BuildManager buildManager;
     public Color hovercolor;
 
     private Renderer rend;
     private Color startColor;
     public GameObject towerPreFab;
-    BuildManager buildManager;
 
-
+    public Vector3 getBuildPosition()
+    {
+        return transform.position;
+    }
     private void Start()
     {
         rend = GetComponent<Renderer>();
@@ -20,30 +22,35 @@ public class BuildableArea : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    //The tower object that is being built
 
     private void OnMouseEnter()
     {
-        if (buildManager.getTurretToBuild() == null)
+
+        if (!buildManager.canBuild)
         {
             return;
         }
+
         GetComponent<Renderer>().material.color = hovercolor;
     }
 
     private void OnMouseDown()
     {
-        if(buildManager.getTurretToBuild() == null)
+        
+        if(!buildManager.canBuild)
         {
             return;
-        }
-        if (towerPreFab != null)
-        {
-            return;
-        }
+        }     
 
-        GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
-        towerPreFab= (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+        
+        if(towerPreFab != null)
+
+        {
+            return;
+        }
+      
+
+        buildManager.buildTurretHere(this);
     }
 
     private void OnMouseExit()

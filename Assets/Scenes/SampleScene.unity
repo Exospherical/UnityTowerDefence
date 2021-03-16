@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 757229014}
   - component: {fileID: 757229016}
   - component: {fileID: 757229015}
+  - component: {fileID: 757229017}
   m_Layer: 0
   m_Name: GameFlowController
   m_TagString: Untagged
@@ -3024,7 +3025,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de86865e804f47e46b24ec154ea08954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretToBuild: {fileID: 0}
+  turretToBuild:
+    turret: {fileID: 0}
+    costToBuild: 0
   standardTurretPrefab: {fileID: 254886565172224180, guid: eb19f1cd190d54745910a0cb2cb6ab06,
     type: 3}
   secondTurretPrefab: {fileID: 7207378760655231091, guid: 0e4ba602b5b5b73448025d400662add2,
@@ -3045,6 +3048,19 @@ MonoBehaviour:
   spawnTime: 5
   enemy: {fileID: 1160068935916456455, guid: bc9e5612e6f053a4f8a2b69430a127cb, type: 3}
   countdownText: {fileID: 326912849}
+--- !u!114 &757229017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757229013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbf43fcc6823f14aab1c934f5a3f421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 400
 --- !u!4 &764883971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501441562911660805, guid: 82598ad9ab75ae644ae015cc1909c0e8,
@@ -3551,7 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3579,7 +3595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1053757041}
-        m_MethodName: buyUpgradedTurret
+        m_MethodName: selectUpgradedTurret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3742,6 +3758,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894b00fa970567c4188ce0e90e78e876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    turret: {fileID: 254886565172224180, guid: eb19f1cd190d54745910a0cb2cb6ab06, type: 3}
+    costToBuild: 0
+  secondTurret:
+    turret: {fileID: 7207378760655231091, guid: 0e4ba602b5b5b73448025d400662add2,
+      type: 3}
+    costToBuild: 0
 --- !u!4 &1056794753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501441562911660805, guid: 82598ad9ab75ae644ae015cc1909c0e8,
@@ -7618,6 +7641,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1053757041}
+    - target: {fileID: 855665469554291607, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectStandardTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116c3c548e1c38b4c8690e16af7d632a, type: 3}
 --- !u!1001 &4348793445451739191

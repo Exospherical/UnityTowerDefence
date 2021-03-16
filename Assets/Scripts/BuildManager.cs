@@ -6,18 +6,17 @@ public class BuildManager : MonoBehaviour
 {
 
     public static BuildManager instance;
-    public GameObject turretToBuild;
+
+    public TurretFactory turretToBuild;
+
     public GameObject standardTurretPrefab;
     public GameObject secondTurretPrefab;
 
-    public GameObject getTurretToBuild()
-    {
-        return turretToBuild;
-    }
-
     private void Start()
     {
-      //  turretToBuild = standardTurretPrefab;
+
+        turretToBuild.turret = standardTurretPrefab;
+
     }
 
     private void Awake()
@@ -26,8 +25,19 @@ public class BuildManager : MonoBehaviour
     }
 
 
-    public void setTurretToBuild(GameObject turret)
+    public bool canBuild { get { return turretToBuild != null; } }
+
+
+    public void selectTurretToBuild(TurretFactory turret)
     {
         turretToBuild = turret;
     }
+
+    public void buildTurretHere(BuildableArea buildableArea)
+    {
+        
+      GameObject turret =  (GameObject)Instantiate(turretToBuild.turret, buildableArea.getBuildPosition(), Quaternion.identity);
+        buildableArea.towerPreFab = turret;
+    }
+
 }
