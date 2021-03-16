@@ -1,28 +1,22 @@
-
+﻿
 using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-
-
-    
-    public TurretFactory secondTurret; 
     BuildManager buildManager;
 
     private void Start()
     {
         buildManager = BuildManager.instance;
     }
-
-    public void selectStandardTurret()
+    public void buyStandardTurret()
     {
-        buildManager.selectTurretToBuild(standardTurret);
+        buildManager.setTurretToBuild(buildManager.standardTurretPrefab);
     }
 
-    public void selectUpgradedTurret()
+    public void buyUpgradedTurret()
     {
-        buildManager.selectTurretToBuild(secondTurret);
-
+        buildManager.setTurretToBuild(buildManager.secondTurretPrefab);
 
     }
 }
