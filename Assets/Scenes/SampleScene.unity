@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 757229014}
   - component: {fileID: 757229016}
   - component: {fileID: 757229015}
+  - component: {fileID: 757229017}
   m_Layer: 0
   m_Name: GameFlowController
   m_TagString: Untagged
@@ -3024,6 +3025,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de86865e804f47e46b24ec154ea08954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  turretToBuild:
+    turret: {fileID: 0}
+    costToBuild: 0
+>>>>>>> Stashed changes
   standardTurretPrefab: {fileID: 254886565172224180, guid: eb19f1cd190d54745910a0cb2cb6ab06,
     type: 3}
 --- !u!114 &757229016
@@ -3042,6 +3049,19 @@ MonoBehaviour:
   spawnTime: 5
   enemy: {fileID: 1160068935916456455, guid: bc9e5612e6f053a4f8a2b69430a127cb, type: 3}
   countdownText: {fileID: 326912849}
+--- !u!114 &757229017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757229013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbf43fcc6823f14aab1c934f5a3f421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 400
 --- !u!4 &764883971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501441562911660805, guid: 82598ad9ab75ae644ae015cc1909c0e8,
@@ -3444,7 +3464,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 214.82056, y: 162.71805}
+  m_SizeDelta: {x: 138.90863, y: 178.2829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989574810
 MonoBehaviour:
@@ -3461,8 +3481,8 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 100
-  m_PreferredHeight: 100
+  m_PreferredWidth: 10
+  m_PreferredHeight: 10
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -3505,7 +3525,22 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 989574812}
   m_OnClick:
     m_PersistentCalls:
+<<<<<<< Updated upstream
       m_Calls: []
+=======
+      m_Calls:
+      - m_Target: {fileID: 1053757041}
+        m_MethodName: selectUpgradedTurret
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+>>>>>>> Stashed changes
 --- !u!114 &989574812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3646,6 +3681,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053757036}
   m_CullTransparentMesh: 0
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1053757041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053757036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894b00fa970567c4188ce0e90e78e876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurret:
+    turret: {fileID: 254886565172224180, guid: eb19f1cd190d54745910a0cb2cb6ab06, type: 3}
+    costToBuild: 100
+  secondTurret:
+    turret: {fileID: 7207378760655231091, guid: 0e4ba602b5b5b73448025d400662add2,
+      type: 3}
+    costToBuild: 250
+>>>>>>> Stashed changes
 --- !u!4 &1056794753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501441562911660805, guid: 82598ad9ab75ae644ae015cc1909c0e8,
@@ -4089,6 +4146,115 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82598ad9ab75ae644ae015cc1909c0e8, type: 3}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1180338308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1180338313}
+  - component: {fileID: 1180338312}
+  - component: {fileID: 1180338311}
+  - component: {fileID: 1180338310}
+  - component: {fileID: 1180338309}
+  m_Layer: 0
+  m_Name: TurretPlatform (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1180338309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180338308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0bf07aef22808d4dab89a28f13aa2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hovercolor: {r: 0.7924528, g: 0.14578143, b: 0.14578143, a: 0}
+  towerPreFab: {fileID: 0}
+--- !u!65 &1180338310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180338308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1180338311
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180338308}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1180338312
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180338308}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1180338313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180338308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0772483, y: 2.0279176, z: 0.77}
+  m_LocalScale: {x: 1, y: 0.05, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1001 &1189922664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7500,6 +7666,138 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82598ad9ab75ae644ae015cc1909c0e8, type: 3}
+<<<<<<< Updated upstream
+=======
+--- !u!1001 &855665470634451435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1053757037}
+    m_Modifications:
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 214.82056
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 162.71805
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291601, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291602, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_Name
+      value: NormalTurretUIIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 855665469554291607, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1053757041}
+    - target: {fileID: 855665469554291607, guid: 116c3c548e1c38b4c8690e16af7d632a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: selectStandardTurret
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 116c3c548e1c38b4c8690e16af7d632a, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &4348793445451739191
 PrefabInstance:
   m_ObjectHideFlags: 0

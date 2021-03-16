@@ -11,7 +11,10 @@ public class BuildableArea : MonoBehaviour
     private Color startColor;
     public GameObject towerPreFab;
 
-
+    public Vector3 getBuildPosition()
+    {
+        return transform.position;
+    }
     private void Start()
     {
         rend = GetComponent<Renderer>();
@@ -22,18 +25,33 @@ public class BuildableArea : MonoBehaviour
 
     private void OnMouseEnter()
     {
+<<<<<<< Updated upstream
+=======
+        if (!buildManager.canBuild)
+        {
+            return;
+        }
+>>>>>>> Stashed changes
         GetComponent<Renderer>().material.color = hovercolor;
     }
 
     private void OnMouseDown()
     {
+<<<<<<< Updated upstream
         if (towerPreFab != null)
+=======
+        if(!buildManager.canBuild)
+        {
+            return;
+        }     
+
+        if(towerPreFab = null)
+>>>>>>> Stashed changes
         {
             return;
         }
 
-        GameObject turretToBuild = BuildManager.instance.getTurretToBuild();
-        towerPreFab= (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+        buildManager.buildTurretHere(this);
     }
 
     private void OnMouseExit()
