@@ -37,6 +37,7 @@ public class HealthBar : MonoBehaviour
         else
         {
             Destroy(transform.parent.gameObject);
+            PlayerStatistics.enemiesKilled++;
             addMonsterKillScore();
         }
     }

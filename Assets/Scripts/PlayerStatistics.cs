@@ -11,13 +11,23 @@ public class PlayerStatistics : MonoBehaviour
     public static int points;
     public int startingMoney = 400;
 
+    public static int enemiesKilled;
+    public int enemiesKilledReset = 0;
+
     void Start()
     {
         points = startingMoney;
+        enemiesKilled = enemiesKilledReset;
     }
 
     private void Update()
     {
         scoreUIelement.text = "$" + PlayerStatistics.points.ToString();
+
+        if (enemiesKilled == 10)
+        {
+            FindObjectOfType<RoundOverMenu>().endRound();
+        }
+
     }
 }

@@ -4,6 +4,9 @@ using System.Collections;
 public class CameraControl : MonoBehaviour
 {
     public float panSpeed = 30f;
+    public float minimumz =10;
+    public float maxiumz = -7f;
+
     private void Update()
     {
         if (Input.GetKey("w"))
