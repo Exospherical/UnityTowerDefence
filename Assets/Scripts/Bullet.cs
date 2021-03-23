@@ -5,9 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
+    public GameObject effect;
 
 
-    // Target (set by Tower)
+
+
+    // Target (set by Turret)
     public Transform target;
 
     void FixedUpdate()
@@ -32,7 +35,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         if (target == null)
-        {
+        {          
             Destroy(gameObject);
             return;
         }
@@ -48,8 +51,6 @@ public class Bullet : MonoBehaviour
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
-
-
     }
 
     void hitTarget()
@@ -62,7 +63,9 @@ public class Bullet : MonoBehaviour
         HealthBar health = co.GetComponentInChildren<HealthBar>();
         if (health)
         {
+
             health.decrease();
+
             Destroy(gameObject);
         }
     }

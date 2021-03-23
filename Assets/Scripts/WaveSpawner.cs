@@ -8,9 +8,9 @@ public class WaveSpawner : MonoBehaviour
     public float startSpawnTime = 5.0f;
     public float spawnTime = 5.0f;
     public GameObject enemy;
-    private int time = 1;
 
-    private float countDownTimer = 2f;
+
+    private float countDownTimer = 0f;
 
 
     public Text countdownText;

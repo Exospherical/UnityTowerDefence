@@ -31,8 +31,20 @@ public class HealthBar : MonoBehaviour
     public void decrease()
     {
         if (current() > 1)
+        {
             tm.text = tm.text.Remove(tm.text.Length - 1);
+        }
         else
+        {
             Destroy(transform.parent.gameObject);
+            addMonsterKillScore();
+        }
     }
+
+    public void addMonsterKillScore()
+    {
+        PlayerStatistics.points += 50;
+    }
+
+
 }

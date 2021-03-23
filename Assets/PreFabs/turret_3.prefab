@@ -105,10 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cf131557522f048a410da2315faf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireRate: 5
+  fireCountdown: 0
   target: {fileID: 0}
-  range: 20
+  range: 4
   turnSpeed: 10
-  bulletPrefab: {fileID: 7713081898882887214, guid: 7df5057070e44ac4abe5431effb1cc03,
+  bulletPrefab: {fileID: 9205535456749985327, guid: debf00fde599afd47883d8ac9a9450c1,
     type: 3}
   parttoRotate: {fileID: 254886565172198544}
   firePoint: {fileID: 8409976469619179302}

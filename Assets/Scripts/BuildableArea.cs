@@ -41,7 +41,7 @@ public class BuildableArea : MonoBehaviour
         {
             return;
         }     
-
+       
 
         
         if(towerPreFab != null)
@@ -49,6 +49,7 @@ public class BuildableArea : MonoBehaviour
         {
             return;
         }
+        
 
         buildManager.buildTurretHere(this);
     }

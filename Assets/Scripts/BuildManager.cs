@@ -35,6 +35,12 @@ public class BuildManager : MonoBehaviour
 
     public void buildTurretHere(BuildableArea buildableArea)
     {
+        if (PlayerStatistics.points < turretToBuild.costToBuild)
+        {
+            return;
+        }
+
+        PlayerStatistics.points -= turretToBuild.costToBuild;
         
       GameObject turret =  (GameObject)Instantiate(turretToBuild.turret, buildableArea.getBuildPosition(), Quaternion.identity);
         buildableArea.towerPreFab = turret;
