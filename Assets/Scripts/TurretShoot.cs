@@ -55,7 +55,6 @@ public class TurretShoot : MonoBehaviour
         if (bullet != null)
         {
             bullet.chase(target);
-            
 
         }
     }

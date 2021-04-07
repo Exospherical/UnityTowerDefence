@@ -45,6 +45,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+
             hitTarget();
             return;
         }
@@ -67,6 +68,12 @@ public class Bullet : MonoBehaviour
             health.decrease();
 
             Destroy(gameObject);
+            Instantiate(effect, transform.position, Quaternion.identity);
+            effect.GetComponent<ParticleSystem>().Play();
+
+
+            Debug.Log("destroyed");
+
         }
     }
 }

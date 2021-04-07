@@ -36,7 +36,9 @@ public class WaveSpawner : MonoBehaviour
            countDownTimer = spawnTime;
         }
         countDownTimer -= Time.deltaTime;
-        countdownText.text = Mathf.Floor(countDownTimer).ToString();               
+        countdownText.text = Mathf.Floor(countDownTimer).ToString();
+
+        
     }
 
     // Create an instance of the enemy prefab at the  selected spawn point's position and rotation.

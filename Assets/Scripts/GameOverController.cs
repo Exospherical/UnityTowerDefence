@@ -11,16 +11,20 @@ public class GameOverController : MonoBehaviour
 
     public void endGame()
     {
+        Time.timeScale = 0;
         gameOverMenu.SetActive(true);
     }
     public void restart()
     {
+        Time.timeScale = 1;
         gameOverMenu.SetActive(false);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    static void quit()
+    public void quit()
     {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu_Scene");
     }
 }

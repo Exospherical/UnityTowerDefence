@@ -5,7 +5,7 @@ public class CameraControl : MonoBehaviour
 {
     public float panSpeed = 30f;
 
-    public float maximumX = 15;
+    public float maximumX = 20;
     public float minimumX = -5;
 
     public float maximumY = 10;
