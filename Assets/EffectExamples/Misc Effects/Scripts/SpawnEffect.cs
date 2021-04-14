@@ -29,13 +29,14 @@ public class SpawnEffect : MonoBehaviour {
 	
 	void Update ()
     {
+        
         if (timer < spawnEffectTime + pause)
         {
             timer += Time.deltaTime;
         }
         else
         {
-            ps.Play();
+        //    ps.Play();
             timer = 0;
         }
 

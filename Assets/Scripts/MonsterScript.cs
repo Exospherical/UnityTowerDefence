@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MonsterScript : MonoBehaviour
 {
-    // public GameObject endGameController;
+     public GameObject spawnAnimation;
     
 
 

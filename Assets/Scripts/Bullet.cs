@@ -70,6 +70,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Instantiate(effect, transform.position, Quaternion.identity);
             effect.GetComponent<ParticleSystem>().Play();
+           
 
 
             Debug.Log("destroyed");
