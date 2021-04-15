@@ -105,4 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hovercolor: {r: 0.23298705, g: 0.7921569, b: 0.14509802, a: 0}
+  cantBuildcolor: {r: 1, g: 0.023584902, b: 0.023584902, a: 0}
   towerPreFab: {fileID: 0}

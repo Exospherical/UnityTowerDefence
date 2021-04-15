@@ -6,6 +6,8 @@ public class BuildableArea : MonoBehaviour
 {
     BuildManager buildManager;
     public Color hovercolor;
+    public Color cantBuildcolor;
+
 
     private Renderer rend;
     private Color startColor;
@@ -28,7 +30,9 @@ public class BuildableArea : MonoBehaviour
 
         if (!buildManager.canBuild)
         {
-            return;
+            GetComponent<Renderer>().material.color = cantBuildcolor;
+
+         //   return;
         }
 
         GetComponent<Renderer>().material.color = hovercolor;

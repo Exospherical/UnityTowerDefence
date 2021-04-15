@@ -5,6 +5,7 @@ public class Shop : MonoBehaviour
 
     public TurretFactory standardTurret;
     public TurretFactory secondTurret;
+    public TurretFactory basicTurret;
 
     BuildManager buildManager;
 
@@ -21,5 +22,10 @@ public class Shop : MonoBehaviour
     {
         buildManager.selectTurretToBuild(secondTurret);
 
+    }
+
+    public void selectBasicTurret()
+    {
+        buildManager.selectTurretToBuild(basicTurret);
     }
 }
