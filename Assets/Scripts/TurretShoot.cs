@@ -5,8 +5,10 @@ using UnityEngine;
 public class TurretShoot : MonoBehaviour
 {
 
-    private float fireRate = 1f;
-    private float fireCountdown = 0f;
+    public float fireRate = 1f;
+    public float fireCountdown = 0f;
+
+    
 
     public Transform target;
     public float range = 5f;
@@ -55,6 +57,7 @@ public class TurretShoot : MonoBehaviour
         if (bullet != null)
         {
             bullet.chase(target);
+
         }
     }
 

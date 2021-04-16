@@ -6,30 +6,30 @@ public class BuildManager : MonoBehaviour
 {
 
     public static BuildManager instance;
-<<<<<<< Updated upstream
-    private GameObject turretToBuild;
-=======
-    public TurretFactory turretToBuild;
->>>>>>> Stashed changes
-    public GameObject standardTurretPrefab;
 
-    private void Start()
+    public TurretFactory turretToBuild;
+
+    public GameObject standardTurretPrefab;
+    public GameObject secondTurretPrefab;
+    public GameObject basicTurretPrefab;
+
+     void Start()
     {
-<<<<<<< Updated upstream
-        turretToBuild = standardTurretPrefab;
-=======
-        turretToBuild.turret = standardTurretPrefab;
->>>>>>> Stashed changes
+
+        turretToBuild.turret = basicTurretPrefab;
+
     }
 
     private void Awake()
     {
         instance = this;
     }
-<<<<<<< Updated upstream
-=======
 
-    public bool canBuild { get { return turretToBuild != null; } }
+
+     public bool canBuild { get { return turretToBuild != null; } }
+
+    public bool hasPoints { get { return PlayerStatistics.points >= turretToBuild.costToBuild; } }
+
 
 
     public void selectTurretToBuild(TurretFactory turret)
@@ -39,15 +39,15 @@ public class BuildManager : MonoBehaviour
 
     public void buildTurretHere(BuildableArea buildableArea)
     {
-        if(PlayerStatistics.points < turretToBuild.costToBuild)
+        if (PlayerStatistics.points < turretToBuild.costToBuild)
         {
             return;
         }
 
         PlayerStatistics.points -= turretToBuild.costToBuild;
-
+        
       GameObject turret =  (GameObject)Instantiate(turretToBuild.turret, buildableArea.getBuildPosition(), Quaternion.identity);
         buildableArea.towerPreFab = turret;
     }
->>>>>>> Stashed changes
+
 }

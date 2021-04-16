@@ -1,11 +1,12 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
 
     public TurretFactory standardTurret;
-    public TurretFactory secondTurret; 
+    public TurretFactory secondTurret;
+    public TurretFactory basicTurret;
+
     BuildManager buildManager;
 
     private void Start()
@@ -21,5 +22,10 @@ public class Shop : MonoBehaviour
     {
         buildManager.selectTurretToBuild(secondTurret);
 
+    }
+
+    public void selectBasicTurret()
+    {
+        buildManager.selectTurretToBuild(basicTurret);
     }
 }

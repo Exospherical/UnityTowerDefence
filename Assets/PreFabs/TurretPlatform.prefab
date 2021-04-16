@@ -104,5 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bf07aef22808d4dab89a28f13aa2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hovercolor: {r: 0.7924528, g: 0.14578143, b: 0.14578143, a: 0}
+  hovercolor: {r: 0.23298705, g: 0.7921569, b: 0.14509802, a: 0}
+  cantBuildcolor: {r: 1, g: 0.023584902, b: 0.023584902, a: 0}
   towerPreFab: {fileID: 0}

@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MonsterScript : MonoBehaviour
 {
+     public GameObject spawnAnimation;
+    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +26,17 @@ public class MonsterScript : MonoBehaviour
         // If castle then deal Damage, destroy self
         if (co.name == "Door_a")
         {
-           // co.GetComponentInChildren<HealthBar>().decrease();
+            // co.GetComponentInChildren<HealthBar>().decrease();
             Destroy(gameObject);
+            FindObjectOfType<GameOverController>().endGame();
+
+
         }
     }
+
+
+
+
 }
 
    
