@@ -359,8 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cf131557522f048a410da2315faf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
-  fireCountdown: 1
+  fireRate: 1
+  fireCountdown: 2
   target: {fileID: 0}
   range: 10
   turnSpeed: 10

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  fireCountdown: 0
+  fireCountdown: 2
   target: {fileID: 0}
   range: 5
   turnSpeed: 10
