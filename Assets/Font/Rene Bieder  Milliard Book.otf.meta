@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 190c9cdf8816e254fa76d487760d862e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Milliard
+  fontNames:
+  - Milliard
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 03ce9db1d99297140a7fa0f8aea580bc, type: 3}
+  - {fileID: 12800000, guid: 0062e3862937a1b4e889512450fcd9bf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

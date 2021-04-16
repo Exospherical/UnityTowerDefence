@@ -23,12 +23,12 @@ public class PlayerStatistics : MonoBehaviour
     private void Update()
     {
         scoreUIelement.text = "$" + PlayerStatistics.points.ToString();
-        /*
-        if (enemiesKilled == 10)
+        
+        if (enemiesKilled == 11)
         {
             FindObjectOfType<RoundOverMenu>().endRound();
         }
-        */
+        
 
     }
 }

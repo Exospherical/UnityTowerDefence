@@ -370,6 +370,9 @@ namespace GreatArcStudios
         public void Restart()
         {
             Application.LoadLevel(Application.loadedLevel);
+            Time.timeScale = timeScale;
+
+
             uiEventSystem.firstSelectedGameObject = defualtSelectedMain;
 
         }

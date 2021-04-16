@@ -15,6 +15,9 @@ public class BuildableArea : MonoBehaviour
 
     public Vector3 getBuildPosition()
     {
+      //  Vector3 addedPosition = transform.position;
+     //   addedPosition.y += 0.5f;
+     //   transform.position = addedPosition;
         return transform.position;
     }
     private void Start()
@@ -27,15 +30,22 @@ public class BuildableArea : MonoBehaviour
 
     private void OnMouseEnter()
     {
-
+        
         if (!buildManager.canBuild)
         {
-            GetComponent<Renderer>().material.color = cantBuildcolor;
-
-         //   return;
+           return;
         }
+        
 
-        GetComponent<Renderer>().material.color = hovercolor;
+        if (buildManager.hasPoints)
+        {
+            rend.material.color = hovercolor;
+        }
+        else
+        {
+            rend.material.color = cantBuildcolor;
+        }
+       // GetComponent<Renderer>().material.color = hovercolor;
     }
 
     private void OnMouseDown()
@@ -45,16 +55,15 @@ public class BuildableArea : MonoBehaviour
         {
             return;
         }     
-       
-
+        
         
         if(towerPreFab != null)
-
         {
             return;
         }
         
 
+        
         buildManager.buildTurretHere(this);
     }
 

@@ -8,6 +8,8 @@ public class TurretShoot : MonoBehaviour
     public float fireRate = 1f;
     public float fireCountdown = 0f;
 
+    
+
     public Transform target;
     public float range = 5f;
     public float turnSpeed = 10f;

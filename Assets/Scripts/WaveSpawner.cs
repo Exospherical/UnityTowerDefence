@@ -8,9 +8,10 @@ public class WaveSpawner : MonoBehaviour
     public float startSpawnTime = 10.0f;
     public float spawnTime = 5.0f;
     public GameObject enemy;
+    public GameObject enemyBoss;
 
 
-    private float countDownTimer = 10f;
+    private float countDownTimer = 5f;
     public int maxWaves = 5;
 
 
@@ -37,8 +38,7 @@ public class WaveSpawner : MonoBehaviour
         }
         countDownTimer -= Time.deltaTime;
         countdownText.text = Mathf.Floor(countDownTimer).ToString();
-
-        
+     
     }
 
     // Create an instance of the enemy prefab at the  selected spawn point's position and rotation.
@@ -46,17 +46,24 @@ public class WaveSpawner : MonoBehaviour
     {
         for(int i = 0; i < waveNumber; i++)           
         {
-            if (waveNumber == maxWaves)
+            if(waveNumber > maxWaves)
             {
-
                 yield break;
             }
-            else
+            else if (waveNumber == maxWaves)
+            {
+                Instantiate(enemyBoss, new Vector3(-14, 0.05f, -13), transform.rotation);
+                waveNumber++;
+                yield break;                    
+            }
+            else if (waveNumber < maxWaves)
             {
                 Instantiate(enemy, new Vector3(-14, 0.05f, -13), transform.rotation);
                 yield return new WaitForSeconds(0.5f);
             }
-        }      
+        }
+      //  FindObjectOfType<GameOverController>().endGame();
+
         waveNumber++;
         Debug.Log(waveNumber);
     }

@@ -66,16 +66,16 @@ public class Bullet : MonoBehaviour
         HealthBar health = co.GetComponentInChildren<HealthBar>();
         if (health)
         {
-
             health.decrease();
 
             Destroy(gameObject);
-            Instantiate(effect, transform.position, Quaternion.identity);
+            var explodingEffect = Instantiate(effect, transform.position, Quaternion.identity);
             effect.GetComponent<ParticleSystem>().Play();
+            Destroy(explodingEffect, 1);
            
+    
 
-
-            Debug.Log("destroyed");
+         //   Debug.Log("destroyed");
 
         }
     }

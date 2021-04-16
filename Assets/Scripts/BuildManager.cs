@@ -13,10 +13,10 @@ public class BuildManager : MonoBehaviour
     public GameObject secondTurretPrefab;
     public GameObject basicTurretPrefab;
 
-    private void Start()
+     void Start()
     {
 
-        turretToBuild.turret = standardTurretPrefab;
+        turretToBuild.turret = basicTurretPrefab;
 
     }
 
@@ -26,7 +26,10 @@ public class BuildManager : MonoBehaviour
     }
 
 
-    public bool canBuild { get { return turretToBuild != null; } }
+     public bool canBuild { get { return turretToBuild != null; } }
+
+    public bool hasPoints { get { return PlayerStatistics.points >= turretToBuild.costToBuild; } }
+
 
 
     public void selectTurretToBuild(TurretFactory turret)
